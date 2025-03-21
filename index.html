@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aatithya Hitkar | GenAI Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap">
     <style>
         :root {
-            --primary-color: #2d2d2d;
-            --accent-color: #4a86e8;
-            --light-accent: #e0e9fa;
+            --primary-color: #1a1a1a;
+            --accent-color: #333333;
             --background: #ffffff;
             --light-gray: #f5f5f5;
-            --gray: #888;
-            --dark-gray: #444;
-            --timeline-line: #ddd;
+            --gray: #888888;
+            --dark-gray: #444444;
+            --timeline-line: #dddddd;
         }
 
         * {
@@ -26,10 +26,11 @@
         }
 
         body {
-            font-family: 'Ubuntu Mono', monospace;
+            font-family: 'Nunito', sans-serif;
             line-height: 1.6;
             color: var(--primary-color);
             background-color: var(--background);
+            font-weight: 400;
         }
 
         .container {
@@ -46,7 +47,7 @@
             align-items: center;
             text-align: center;
             padding: 2rem;
-            background-color: var(--light-accent);
+            background-color: var(--light-gray);
         }
 
         .profile-pic {
@@ -55,10 +56,9 @@
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 2rem;
             background-color: #f0f0f0;
-            /* Placeholder color */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -75,14 +75,14 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 1rem 0;
             z-index: 100;
             transition: all 0.3s ease;
         }
 
         nav.scrolled {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         nav ul {
@@ -98,10 +98,12 @@
         nav ul li a {
             text-decoration: none;
             color: var(--primary-color);
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
             display: flex;
             align-items: center;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
 
         nav ul li a i {
@@ -109,14 +111,14 @@
         }
 
         nav ul li a:hover {
-            color: var(--accent-color);
+            color: var(--gray);
         }
 
         h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            font-family: 'Ubuntu Mono', monospace;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         h2 {
@@ -124,28 +126,31 @@
             margin-bottom: 2rem;
             text-align: center;
             color: var(--primary-color);
-            font-family: 'Ubuntu Mono', monospace;
             font-weight: 700;
+            letter-spacing: -0.3px;
         }
 
         h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
             color: var(--accent-color);
-            font-family: 'Ubuntu Mono', monospace;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .subtitle {
             font-size: 1.5rem;
             color: var(--gray);
             margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .intro {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 2rem;
+            font-weight: 400;
+            color: var(--dark-gray);
         }
 
         section {
@@ -174,12 +179,20 @@
             left: 50%;
             transform: translateX(-50%);
             width: 100px;
-            height: 4px;
-            background-color: var(--accent-color);
+            height: 3px;
+            background-color: var(--dark-gray);
         }
 
         .about {
             background-color: var(--light-gray);
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
         }
 
         .timeline {
@@ -191,12 +204,12 @@
         .timeline::after {
             content: '';
             position: absolute;
-            width: 4px;
+            width: 3px;
             background-color: var(--timeline-line);
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -2px;
+            margin-left: -1.5px;
         }
 
         .timeline-item {
@@ -209,11 +222,11 @@
         .timeline-item::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
+            width: 18px;
+            height: 18px;
+            right: -9px;
             background-color: var(--background);
-            border: 4px solid var(--accent-color);
+            border: 3px solid var(--dark-gray);
             top: 15px;
             border-radius: 50%;
             z-index: 1;
@@ -228,11 +241,11 @@
         }
 
         .left::after {
-            right: -10px;
+            right: -9px;
         }
 
         .right::after {
-            left: -10px;
+            left: -9px;
         }
 
         .timeline-content {
@@ -240,13 +253,33 @@
             background-color: white;
             position: relative;
             border-radius: 6px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
         }
 
         .timeline-date {
-            font-weight: bold;
-            color: var(--accent-color);
+            font-weight: 700;
+            color: var(--dark-gray);
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-content h3 {
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .timeline-content p {
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .timeline-content p:first-of-type {
+            font-style: italic;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
         }
 
         .projects-grid {
@@ -260,13 +293,13 @@
             background-color: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .project-card-content {
@@ -276,14 +309,21 @@
         .project-title {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: var(--accent-color);
+            color: var(--primary-color);
             display: flex;
             align-items: center;
+            font-weight: 700;
         }
 
         .project-title i {
             margin-right: 0.5rem;
             font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+
+        .project-card-content p {
+            color: var(--dark-gray);
+            line-height: 1.7;
         }
 
         .skills-container {
@@ -297,10 +337,14 @@
         .skills-category h3 {
             display: flex;
             align-items: center;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
         }
 
         .skills-category h3 i {
             margin-right: 0.8rem;
+            color: var(--dark-gray);
         }
 
         .skills-list {
@@ -312,21 +356,29 @@
 
         .skill-tag {
             padding: 0.5rem 1rem;
-            background-color: var(--light-accent);
+            background-color: var(--light-gray);
             border-radius: 50px;
             display: inline-block;
-            font-weight: 500;
+            font-weight: 600;
+            color: var(--dark-gray);
+            letter-spacing: 0.3px;
+            font-size: 0.9rem;
         }
 
         .certifications-list {
             list-style: none;
             margin-top: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .certifications-list li {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             padding-left: 2rem;
             position: relative;
+            font-weight: 500;
+            color: var(--dark-gray);
         }
 
         .certifications-list li::before {
@@ -335,7 +387,7 @@
             font-weight: 900;
             position: absolute;
             left: 0;
-            color: var(--accent-color);
+            color: var(--dark-gray);
         }
 
         .education {
@@ -347,54 +399,67 @@
             padding: 2rem;
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
 
         .degree {
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
+            color: var(--primary-color);
+            font-size: 1.1rem;
         }
 
         .degree i {
             margin-right: 0.8rem;
-            color: var(--accent-color);
+            color: var(--dark-gray);
         }
 
         .school {
             color: var(--dark-gray);
             padding-left: 1.8rem;
+            font-style: italic;
+            font-weight: 500;
         }
 
         .contact {
             text-align: center;
         }
 
+        .contact p {
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 2rem;
         }
 
         .contact-link {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             color: var(--primary-color);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 600;
         }
 
         .contact-link:hover {
-            color: var(--accent-color);
+            color: var(--gray);
         }
 
         .contact-link i {
             font-size: 2rem;
             margin-bottom: 0.5rem;
+            color: var(--dark-gray);
         }
 
         footer {
@@ -402,6 +467,16 @@
             padding: 2rem;
             background-color: var(--primary-color);
             color: white;
+        }
+
+        footer p {
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .active {
+            color: var(--dark-gray);
+            font-weight: 800;
         }
 
         @media (max-width: 768px) {
@@ -495,7 +570,7 @@
 
     <section id="experience">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+            <h2 class="section-title"><i class="fas fa-history"></i> Experience</h2>
             <div class="timeline">
                 <div class="timeline-item left">
                     <div class="timeline-content">
@@ -528,7 +603,7 @@
 
     <section id="projects">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-code-branch"></i> Projects</h2>
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
             <h3><i class="fas fa-robot"></i> Key LLM/RAG Based Projects</h3>
             <div class="projects-grid">
                 <div class="project-card">
@@ -718,7 +793,7 @@
     <script>
         // Placeholder image fallback
         document.getElementById('profile-image').onerror = function () {
-            this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="%23f0f0f0"/><text x="50%" y="50%" font-family="Arial" font-size="30" text-anchor="middle" dominant-baseline="middle" fill="%23888">Add Photo</text></svg>';
+            this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="%23f0f0f0"/><text x="50%" y="50%" font-family="Nunito, Arial" font-size="30" text-anchor="middle" dominant-baseline="middle" fill="%23888">Add Photo</text></svg>';
         };
 
         // Navigation highlighting and scroll effect
