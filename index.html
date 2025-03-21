@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aatithya Hitkar | GenAI Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2d2d2d;
+            --accent-color: #4a86e8;
+            --light-accent: #e0e9fa;
+            --background: #ffffff;
+            --light-gray: #f5f5f5;
+            --gray: #888;
+            --dark-gray: #444;
+            --timeline-line: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--light-accent);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        .about {
+            background-color: var(--light-gray);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--timeline-line);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--background);
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .skills-container {
+            margin-top: 2rem;
+        }
+
+        .skills-category {
+            margin-bottom: 2rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background-color: var(--light-accent);
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .certifications-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .certifications-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .certifications-list li::before {
+            content: '\f559';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .education {
+            background-color: var(--light-gray);
+        }
+
+        .education-item {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .degree {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .school {
+            color: var(--dark-gray);
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-link i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="header">
+        <h1>Aatithya Hitkar</h1>
+        <p class="subtitle">GenAI Engineer</p>
+        <p class="intro">
+            5+ years of experience in building and deploying advanced AI models and solutions.
+            Specialized in prompt engineering, LLMs, and Retrieval-Augmented Generation (RAG).
+        </p>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I'm a GenAI Engineer with 5+ years of experience in building and deploying advanced AI models and solutions.
+                I specialize in prompt engineering, LLMs (Gemini, ChatGPT, LLaMA), and Retrieval-Augmented
+                Generation (RAG). I have extensive experience with advanced model tools like Vertex AI and Langchain.
+                I've demonstrated the ability to deliver scalable AI solutions using Python, Flask, and cloud platforms
+                (Google Cloud, AWS, Azure) with a strong focus on automation and end-to-end solution deployment.
+            </p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">12/2022 - Present</div>
+                        <h3>GenAI Engineer</h3>
+                        <p>Pragnakalp Techlabs, Ahmedabad, Gujarat</p>
+                        <p>
+                            Led projects involving Retrieval-Augmented Generation (RAG) with large language models like Gemini, ChatGPT, GPT-3, and LLaMA.
+                            Specialized in integrating external data sources to create LLM-based chatbots.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">07/2019 - 12/2022</div>
+                        <h3>Machine Learning and Chatbot Engineer</h3>
+                        <p>Pragnakalp Techlabs, Ahmedabad, Gujarat</p>
+                        <p>
+                            Led projects focused on building web scraping pipelines using tools like BeautifulSoup, Selenium, PlayWright and Scrapy.
+                            Specialized in automating data extraction from diverse sources, integrating scraped data with workflows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <h3>Key LLM/RAG Based Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h4 class="project-title">TV Advertisement Chatbot</h4>
+                        <p>Developed a complex chatbot leveraging video advertisement data with embedding-based retrieval and structured metadata storage for TV ads.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h4 class="project-title">LLaMA3.1-8B Fine-tuning</h4>
+                        <p>Successfully fine-tuned LLaMA3-8B on low-resource system.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h4 class="project-title">Automobile Procedure Retrieval System</h4>
+                        <p>Developed a RAG system to extract step-by-step procedures from a large database of automobile documents.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h4 class="project-title">Research Paper Table Query System</h4>
+                        <p>Created a system to extract and query data from tables in research papers, storing it in Google BigQuery.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h4 class="project-title">AI-Powered Health Instructor Chatbot</h4>
+                        <p>Developed a chatbot integrating a vector database to store and retrieve exercise details from PDFs and solutions from video sessions.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h4 class="project-title">Custom Influencer Image Generation System</h4>
+                        <p>Built a system using Stable Diffusion that allows customers to create personalized models for their users.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 3rem;">Other Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h4 class="project-title">MachineWrites</h4>
+                        <p>Developed a platform enabling users to perform paraphrasing, summarization, and text generation using models like GPT-2, BART, and T5.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h4 class="project-title">DocSaar</h4>
+                        <p>Designed a system for extracting structured data from uploaded documents like resumes and invoices using OCR model and BERT.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h4 class="project-title">Postify</h4>
+                        <p>Built a system allowing users to upload photos and generate context-appropriate taglines for social media platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>AI & Machine Learning</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">LLM Deployment</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">SpaCy</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Cloud & Tools</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Google Cloud</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Microsoft Azure</span>
+                        <span class="skill-tag">Google Vertex AI</span>
+                        <span class="skill-tag">Langchain</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Development</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Streamlit</span>
+                        <span class="skill-tag">Pandas</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Databases & Storage</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">BigQuery</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">AlloyDB</span>
+                        <span class="skill-tag">Pinecone</span>
+                        <span class="skill-tag">Milvus</span>
+                        <span class="skill-tag">Vector Store</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Deployment & Infrastructure</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Nginx</span>
+                        <span class="skill-tag">uWSGI</span>
+                        <span class="skill-tag">Gunicorn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <ul class="certifications-list">
+                <li>Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</li>
+                <li>Google Cloud: Generative AI with Vertex AI: Text Prompt Design</li>
+                <li>Google Cloud: Search with Generative AI</li>
+                <li>Introduction to Image Generation</li>
+                <li>Google Cloud: Transformer Models and BERT Model</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <p class="degree">Master of Technology - Web Technology, 2019</p>
+                <p class="school">Department of Computer Science(Rollwala), Gujarat University, Gujarat</p>
+            </div>
+            <div class="education-item">
+                <p class="degree">Master of Computer Application, 2017</p>
+                <p class="school">L D college of engineering, Gujarat Technological University, Gujarat</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p>Feel free to reach out to me for collaboration or opportunities</p>
+            <div class="contact-links">
+                <a href="mailto:aatithyahitkar@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </a>
+                <a href="https://linkedin.com/in/aatithya-hitkar/" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="tel:+919067966647" class="contact-link">
+                    <i class="fas fa-phone"></i>
+                    Phone
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aatithya Hitkar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation highlighting and scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            
+            // Highlight active section in navigation
+            const sections = document.querySelectorAll('section, header');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
