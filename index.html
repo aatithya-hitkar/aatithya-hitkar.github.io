@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aatithya Hitkar | GenAI Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap">
     <style>
         :root {
             --primary-color: #2d2d2d;
@@ -24,7 +26,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Ubuntu Mono', monospace;
             line-height: 1.6;
             color: var(--primary-color);
             background-color: var(--background);
@@ -45,6 +47,28 @@
             text-align: center;
             padding: 2rem;
             background-color: var(--light-accent);
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            background-color: #f0f0f0;
+            /* Placeholder color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         nav {
@@ -76,6 +100,12 @@
             color: var(--primary-color);
             font-weight: 500;
             transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a i {
+            margin-right: 0.3rem;
         }
 
         nav ul li a:hover {
@@ -85,6 +115,8 @@
         h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
+            font-family: 'Ubuntu Mono', monospace;
+            font-weight: 700;
         }
 
         h2 {
@@ -92,12 +124,16 @@
             margin-bottom: 2rem;
             text-align: center;
             color: var(--primary-color);
+            font-family: 'Ubuntu Mono', monospace;
+            font-weight: 700;
         }
 
         h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
             color: var(--accent-color);
+            font-family: 'Ubuntu Mono', monospace;
+            font-weight: 700;
         }
 
         .subtitle {
@@ -120,6 +156,15 @@
             position: relative;
             margin-bottom: 3rem;
             padding-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-title i {
+            margin-right: 1rem;
+            font-size: 2rem;
+            color: var(--accent-color);
         }
 
         .section-title::after {
@@ -232,6 +277,13 @@
             font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--accent-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .project-title i {
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
         }
 
         .skills-container {
@@ -240,6 +292,15 @@
 
         .skills-category {
             margin-bottom: 2rem;
+        }
+
+        .skills-category h3 {
+            display: flex;
+            align-items: center;
+        }
+
+        .skills-category h3 i {
+            margin-right: 0.8rem;
         }
 
         .skills-list {
@@ -292,10 +353,18 @@
         .degree {
             font-weight: bold;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .degree i {
+            margin-right: 0.8rem;
+            color: var(--accent-color);
         }
 
         .school {
             color: var(--dark-gray);
+            padding-left: 1.8rem;
         }
 
         .contact {
@@ -339,50 +408,69 @@
             h1 {
                 font-size: 2.5rem;
             }
-            
+
             h2 {
                 font-size: 2rem;
             }
-            
+
             .timeline::after {
                 left: 31px;
             }
-            
+
             .timeline-item {
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 25px;
             }
-            
+
             .timeline-item::after {
                 left: 21px;
             }
-            
-            .left::after, .right::after {
+
+            .left::after,
+            .right::after {
                 left: 21px;
             }
-            
+
             .right {
                 left: 0%;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 0.3rem;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
 </head>
+
 <body>
     <nav id="navbar">
         <ul>
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#header"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+            <li><a href="#projects"><i class="fas fa-code-branch"></i> Projects</a></li>
+            <li><a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a></li>
+            <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
+            <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
     </nav>
 
     <header id="header">
+        <div class="profile-pic">
+            <!-- Replace the 'src' with your actual photo path -->
+            <img src="photo.jpg" alt="Aatithya Hitkar" id="profile-image">
+        </div>
         <h1>Aatithya Hitkar</h1>
         <p class="subtitle">GenAI Engineer</p>
         <p class="intro">
@@ -393,9 +481,10 @@
 
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title"><i class="fas fa-user-circle"></i> About Me</h2>
             <p>
-                I'm a GenAI Engineer with 5+ years of experience in building and deploying advanced AI models and solutions.
+                I'm a GenAI Engineer with 5+ years of experience in building and deploying advanced AI models and
+                solutions.
                 I specialize in prompt engineering, LLMs (Gemini, ChatGPT, LLaMA), and Retrieval-Augmented
                 Generation (RAG). I have extensive experience with advanced model tools like Vertex AI and Langchain.
                 I've demonstrated the ability to deliver scalable AI solutions using Python, Flask, and cloud platforms
@@ -406,7 +495,7 @@
 
     <section id="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
             <div class="timeline">
                 <div class="timeline-item left">
                     <div class="timeline-content">
@@ -414,7 +503,8 @@
                         <h3>GenAI Engineer</h3>
                         <p>Pragnakalp Techlabs, Ahmedabad, Gujarat</p>
                         <p>
-                            Led projects involving Retrieval-Augmented Generation (RAG) with large language models like Gemini, ChatGPT, GPT-3, and LLaMA.
+                            Led projects involving Retrieval-Augmented Generation (RAG) with large language models like
+                            Gemini, ChatGPT, GPT-3, and LLaMA.
                             Specialized in integrating external data sources to create LLM-based chatbots.
                         </p>
                     </div>
@@ -425,8 +515,10 @@
                         <h3>Machine Learning and Chatbot Engineer</h3>
                         <p>Pragnakalp Techlabs, Ahmedabad, Gujarat</p>
                         <p>
-                            Led projects focused on building web scraping pipelines using tools like BeautifulSoup, Selenium, PlayWright and Scrapy.
-                            Specialized in automating data extraction from diverse sources, integrating scraped data with workflows.
+                            Led projects focused on building web scraping pipelines using tools like BeautifulSoup,
+                            Selenium, PlayWright and Scrapy.
+                            Specialized in automating data extraction from diverse sources, integrating scraped data
+                            with workflows.
                         </p>
                     </div>
                 </div>
@@ -436,65 +528,75 @@
 
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <h3>Key LLM/RAG Based Projects</h3>
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
+            <h3><i class="fas fa-robot"></i> Key LLM/RAG Based Projects</h3>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-card-content">
-                        <h4 class="project-title">TV Advertisement Chatbot</h4>
-                        <p>Developed a complex chatbot leveraging video advertisement data with embedding-based retrieval and structured metadata storage for TV ads.</p>
+                        <h4 class="project-title"><i class="fas fa-tv"></i> TV Advertisement Chatbot</h4>
+                        <p>Developed a complex chatbot leveraging video advertisement data with embedding-based
+                            retrieval and structured metadata storage for TV ads.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-card-content">
-                        <h4 class="project-title">LLaMA3.1-8B Fine-tuning</h4>
+                        <h4 class="project-title"><i class="fas fa-cogs"></i> LLaMA3.1-8B Fine-tuning</h4>
                         <p>Successfully fine-tuned LLaMA3-8B on low-resource system.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-card-content">
-                        <h4 class="project-title">Automobile Procedure Retrieval System</h4>
-                        <p>Developed a RAG system to extract step-by-step procedures from a large database of automobile documents.</p>
+                        <h4 class="project-title"><i class="fas fa-car"></i> Automobile Procedure Retrieval System</h4>
+                        <p>Developed a RAG system to extract step-by-step procedures from a large database of automobile
+                            documents.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-card-content">
-                        <h4 class="project-title">Research Paper Table Query System</h4>
-                        <p>Created a system to extract and query data from tables in research papers, storing it in Google BigQuery.</p>
+                        <h4 class="project-title"><i class="fas fa-book"></i> Research Paper Table Query System</h4>
+                        <p>Created a system to extract and query data from tables in research papers, storing it in
+                            Google BigQuery.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-card-content">
-                        <h4 class="project-title">AI-Powered Health Instructor Chatbot</h4>
-                        <p>Developed a chatbot integrating a vector database to store and retrieve exercise details from PDFs and solutions from video sessions.</p>
+                        <h4 class="project-title"><i class="fas fa-heartbeat"></i> AI-Powered Health Instructor Chatbot
+                        </h4>
+                        <p>Developed a chatbot integrating a vector database to store and retrieve exercise details from
+                            PDFs and solutions from video sessions.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-card-content">
-                        <h4 class="project-title">Custom Influencer Image Generation System</h4>
-                        <p>Built a system using Stable Diffusion that allows customers to create personalized models for their users.</p>
+                        <h4 class="project-title"><i class="fas fa-image"></i> Custom Influencer Image Generation System
+                        </h4>
+                        <p>Built a system using Stable Diffusion that allows customers to create personalized models for
+                            their users.</p>
                     </div>
                 </div>
             </div>
-            
-            <h3 style="margin-top: 3rem;">Other Projects</h3>
+
+            <h3 style="margin-top: 3rem;"><i class="fas fa-tools"></i> Other Projects</h3>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-card-content">
-                        <h4 class="project-title">MachineWrites</h4>
-                        <p>Developed a platform enabling users to perform paraphrasing, summarization, and text generation using models like GPT-2, BART, and T5.</p>
+                        <h4 class="project-title"><i class="fas fa-pen-fancy"></i> MachineWrites</h4>
+                        <p>Developed a platform enabling users to perform paraphrasing, summarization, and text
+                            generation using models like GPT-2, BART, and T5.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-card-content">
-                        <h4 class="project-title">DocSaar</h4>
-                        <p>Designed a system for extracting structured data from uploaded documents like resumes and invoices using OCR model and BERT.</p>
+                        <h4 class="project-title"><i class="fas fa-file-alt"></i> DocSaar</h4>
+                        <p>Designed a system for extracting structured data from uploaded documents like resumes and
+                            invoices using OCR model and BERT.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-card-content">
-                        <h4 class="project-title">Postify</h4>
-                        <p>Built a system allowing users to upload photos and generate context-appropriate taglines for social media platforms.</p>
+                        <h4 class="project-title"><i class="fas fa-hashtag"></i> Postify</h4>
+                        <p>Built a system allowing users to upload photos and generate context-appropriate taglines for
+                            social media platforms.</p>
                     </div>
                 </div>
             </div>
@@ -503,10 +605,10 @@
 
     <section id="skills">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title"><i class="fas fa-brain"></i> Skills</h2>
             <div class="skills-container">
                 <div class="skills-category">
-                    <h3>AI & Machine Learning</h3>
+                    <h3><i class="fas fa-robot"></i> AI & Machine Learning</h3>
                     <div class="skills-list">
                         <span class="skill-tag">Prompt Engineering</span>
                         <span class="skill-tag">RAG</span>
@@ -517,7 +619,7 @@
                     </div>
                 </div>
                 <div class="skills-category">
-                    <h3>Cloud & Tools</h3>
+                    <h3><i class="fas fa-cloud"></i> Cloud & Tools</h3>
                     <div class="skills-list">
                         <span class="skill-tag">Google Cloud</span>
                         <span class="skill-tag">AWS</span>
@@ -527,7 +629,7 @@
                     </div>
                 </div>
                 <div class="skills-category">
-                    <h3>Development</h3>
+                    <h3><i class="fas fa-code"></i> Development</h3>
                     <div class="skills-list">
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">Flask</span>
@@ -536,7 +638,7 @@
                     </div>
                 </div>
                 <div class="skills-category">
-                    <h3>Databases & Storage</h3>
+                    <h3><i class="fas fa-database"></i> Databases & Storage</h3>
                     <div class="skills-list">
                         <span class="skill-tag">BigQuery</span>
                         <span class="skill-tag">MySQL</span>
@@ -548,7 +650,7 @@
                     </div>
                 </div>
                 <div class="skills-category">
-                    <h3>Deployment & Infrastructure</h3>
+                    <h3><i class="fas fa-server"></i> Deployment & Infrastructure</h3>
                     <div class="skills-list">
                         <span class="skill-tag">Nginx</span>
                         <span class="skill-tag">uWSGI</span>
@@ -561,7 +663,7 @@
 
     <section id="certifications">
         <div class="container">
-            <h2 class="section-title">Certifications</h2>
+            <h2 class="section-title"><i class="fas fa-award"></i> Certifications</h2>
             <ul class="certifications-list">
                 <li>Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</li>
                 <li>Google Cloud: Generative AI with Vertex AI: Text Prompt Design</li>
@@ -574,13 +676,13 @@
 
     <section id="education" class="education">
         <div class="container">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
             <div class="education-item">
-                <p class="degree">Master of Technology - Web Technology, 2019</p>
+                <p class="degree"><i class="fas fa-university"></i> Master of Technology - Web Technology, 2019</p>
                 <p class="school">Department of Computer Science(Rollwala), Gujarat University, Gujarat</p>
             </div>
             <div class="education-item">
-                <p class="degree">Master of Computer Application, 2017</p>
+                <p class="degree"><i class="fas fa-university"></i> Master of Computer Application, 2017</p>
                 <p class="school">L D college of engineering, Gujarat Technological University, Gujarat</p>
             </div>
         </div>
@@ -588,7 +690,7 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
+            <h2 class="section-title"><i class="fas fa-paper-plane"></i> Contact</h2>
             <p>Feel free to reach out to me for collaboration or opportunities</p>
             <div class="contact-links">
                 <a href="mailto:aatithyahitkar@gmail.com" class="contact-link">
@@ -614,28 +716,33 @@
     </footer>
 
     <script>
+        // Placeholder image fallback
+        document.getElementById('profile-image').onerror = function () {
+            this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="%23f0f0f0"/><text x="50%" y="50%" font-family="Arial" font-size="30" text-anchor="middle" dominant-baseline="middle" fill="%23888">Add Photo</text></svg>';
+        };
+
         // Navigation highlighting and scroll effect
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 100) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
             }
-            
+
             // Highlight active section in navigation
             const sections = document.querySelectorAll('section, header');
             const navLinks = document.querySelectorAll('nav ul li a');
-            
+
             let current = '';
-            
+
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 if (window.scrollY >= sectionTop - 100) {
                     current = section.getAttribute('id');
                 }
             });
-            
+
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${current}`) {
@@ -643,15 +750,15 @@
                 }
             });
         });
-        
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 window.scrollTo({
                     top: targetElement.offsetTop,
                     behavior: 'smooth'
@@ -660,4 +767,5 @@
         });
     </script>
 </body>
+
 </html>
